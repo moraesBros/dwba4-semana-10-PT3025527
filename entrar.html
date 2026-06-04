@@ -31,50 +31,76 @@
     
   </header>
   
-  <main> <!-- indica que é o conteúdo principal dessa página -->
-	   
-	  <img src="Imagens/ifsp.png" alt="IFSP" style="width: 10%; height: auto;">
-		<h1>Faça login</h1>
-        <form method="POST">
+ <main>
+  <img src="Imagens/ifsp.png" alt="IFSP" style="width: 10%; height: auto;">
+  <h1>Faça login</h1>
 
-<div class="mx-auto" style="max-width: 400px;">
-  <form>
-    
-    <!-- Campo email -->
-    <div class="form-group">
-      <input type="email" class="form-control text-center" placeholder="seu_email.com" required>
-    </div>
+  <div class="mx-auto" style="max-width: 400px;">
+    <form id="loginForm" novalidate>
+      
+      <!-- Campo email -->
+      <div class="form-group">
+        <input type="email" class="form-control text-center" id="email" placeholder="seu_email.com" required>
+        <div class="invalid-feedback">Preencher e-mail.</div>
+      </div>
 
-    <!-- Campo senha -->
-    <div class="form-group">
-      <input type="password" class="form-control text-center" placeholder="***Senha***" required>
-    </div>
+      <!-- Campo senha -->
+      <div class="form-group">
+        <input type="password" class="form-control text-center" id="senha" placeholder="***Senha***" required>
+        <div class="invalid-feedback">Preencher senha.</div>
+      </div>
 
-    <!-- Checkbox "Lembra de mim" -->
-    <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="lembrar">
-      <label class="form-check-label" for="lembrar">Lembra de mim</label>
-    </div>
+      <!-- Checkbox -->
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="lembrar">
+        <label class="form-check-label" for="lembrar">Lembra de mim</label>
+      </div>
 
-    <!-- Espaço extra -->
-    <div class="form-group">
-      <br>
-    </div>
+      <div class="form-group"><br></div>
 
-    <!-- Link "Esqueci a senha" -->
-    <div class="form-group text-center">
-  <a href="contato.html">Esqueci a senha</a>
-    </div>
+      <!-- Link esqueci a senha -->
+      <div class="form-group text-center">
+        <a href="contato.html">Esqueci a senha</a>
+      </div>
 
-    <!-- Botão Login com largura total -->
-    <div class="form-group">
-      <button type="button" class="btn btn-primary btn-block">Login</button>
-    </div>
+      <!-- Botão Login -->
+      <div class="form-group">
+        <button type="button" class="btn btn-primary btn-block" id="loginBtn">Login</button>
+      </div>
 
-  </form>
-</div>
-			
-</main>	
+    </form>
+  </div>
+</main>
+
+<script>
+  document.getElementById('loginBtn').addEventListener('click', function() {
+    var emailInput = document.getElementById('email');
+    var senhaInput = document.getElementById('senha');
+    var valid = true;
+
+    // Remove marcações de erro anteriores
+    emailInput.classList.remove('is-invalid');
+    senhaInput.classList.remove('is-invalid');
+
+    // Verifica se o e-mail está vazio
+    if (emailInput.value.trim() === '') {
+      emailInput.classList.add('is-invalid');
+      valid = false;
+    }
+
+    // Verifica se a senha está vazia
+    if (senhaInput.value.trim() === '') {
+      senhaInput.classList.add('is-invalid');
+      valid = false;
+    }
+
+    if (valid) {
+      // Aqui você pode enviar o formulário ou realizar a ação de login
+      // Exemplo: document.getElementById('loginForm').submit();
+      alert('Login efetuado com sucesso!');
+    }
+  });
+</script>
 	
   <footer>     
       <object width="100%" height="200px" data="rodape.html"></object>
