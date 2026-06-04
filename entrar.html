@@ -32,40 +32,50 @@
   </header>
   
   <main> <!-- indica que é o conteúdo principal dessa página -->
-	   <img src="Imagens/ifsp.png" alt="IFSP" style="width: 20%; height: auto;">
+	   
+	  <img src="Imagens/ifsp.png" alt="IFSP" style="width: 20%; height: auto;">
 		<h1>Faça login</h1>
         <form method="POST">
-       <div class="d-flex justify-content-center">
-  <form style="width: 100%; max-width: 400px;">
+
+<div class="mx-auto" style="max-width: 400px;">
+  <form>
     
-    <!-- Campo de email -->
+    <!-- Campo email -->
     <div class="form-group">
       <input type="email" class="form-control text-center" placeholder="seu_email.com" required>
     </div>
 
-    <!-- Campo de senha com placeholder "***Senha***" -->
+    <!-- Campo senha -->
     <div class="form-group">
       <input type="password" class="form-control text-center" placeholder="***Senha***" required>
     </div>
 
-    <!-- Checkbox "Lembra de mim" -->
-    <div class="form-check">
+    <!-- Checkbox "Lembra de mim" (em linha própria) -->
+    <div class="form-group form-check">
       <input type="checkbox" class="form-check-input" id="lembrar">
       <label class="form-check-label" for="lembrar">Lembra de mim</label>
     </div>
 
-    <br> <!-- Espaço solicitado -->
+    <!-- Espaço extra -->
+    <div class="form-group">
+      <br>
+    </div>
 
     <!-- Link "Esqueci a senha" -->
-    <a href="#" class="d-block text-center">Esqueci a senha</a>
+    <div class="form-group text-center">
+      <a href="#">Esqueci a senha</a>
+    </div>
 
     <!-- Botão Login centralizado -->
-    <button type="button" class="btn btn-primary d-block mx-auto mt-2">Login</button>
-
+    <div class="form-group text-center">
+      <button type="button" class="btn btn-primary">Login</button>
+    </div>
+	  
   </form>
 </div>
-  </main>
-  
+			
+</main>	
+	
   <footer>     
       <object width="100%" height="200px" data="rodape.html"></object>
   </footer>
